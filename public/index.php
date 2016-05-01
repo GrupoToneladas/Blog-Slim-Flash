@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include __DIR__ . "/../vendor/autoload.php";
 $settings = include __DIR__ . "/../app/config/settings.php";
 

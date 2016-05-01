@@ -18,6 +18,11 @@
     <![endif]-->
   </head>
   <body>
+      {% for item in message.error %}
+        <div class="alert alert-danger">
+            {{item}}
+        </div>
+      {% endfor %}
     <h1>Usando o Slim Flash!</h1>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

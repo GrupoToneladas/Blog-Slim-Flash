@@ -16,7 +16,11 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};
+
 # Actions
 $container[App\Action\HomeAction::class] = function ($container) {
-    return new App\Action\HomeAction($container->get('view'));
+    return new App\Action\HomeAction($container->get('view'), $container->get('flash'));
 };
