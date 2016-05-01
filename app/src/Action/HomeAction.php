@@ -10,21 +10,15 @@ use Psr\Http\Message\ResponseInterface as Response;
 class HomeAction
 {
     private $view;
-    private $flash;
 
-    public function __construct(Twig $view, $flash)
+    public function __construct(Twig $view)
     {
         $this->view = $view;
-        $this->flash = $flash;
     }
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $message = $this->flash->getMessages();
-
-        $this->view->render($response, 'home.html', [
-            'message' => $message,
-        ]);
+        $this->view->render($response, 'home.html');
 
         return $response;
     }
